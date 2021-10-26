@@ -5,6 +5,8 @@
       @keydown.escape="isOpen = false"
       :class="{ 'shadow-lg bg-indigo-900' : isOpen , 'bg-gray-800' : !isOpen}"
     >
+      <div id="progress" class="h-1 z-20 top-0" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>  
+        
       <!--Logo etc-->
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a

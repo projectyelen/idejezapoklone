@@ -1,6 +1,6 @@
 items:
   - text: Početna
-    url: /home
+    url: /
   - text: Blog
     url: /blog
   - text: O nama

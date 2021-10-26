@@ -45,7 +45,7 @@
         </button>
         <!--Menu-->
         <div
-            class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 flex"
+            class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
             :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
             @click.away="isOpen = false"
             x-show.transition="true"
@@ -53,7 +53,7 @@
             {% if navigation.items %}
             <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
                 {% for item in navigation.items %}
-                <li class="mr-3">
+                <li class="mr-3 text-center">
                     <a @click="isOpen = false" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="{{ item.url }}">{{ item.text }}</a>
                 </li>
                 {% endfor %}

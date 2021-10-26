@@ -1,3 +1,4 @@
+<div class="{{ 'lg:fixed' if path == 'home' }} w-full">
     <nav
       class="flex items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0"
       x-data="{ isOpen: false }"
@@ -11,7 +12,7 @@
           href="#"
         >
           <span class="text-2xl pl-2"
-            ><i class="em em-grinning"></i> Brand McBrandface</span
+            ><i class="text-indigo-500 font-bold text-lg"></i> Logo</span
           >
         </a>
       </div>
@@ -49,41 +50,19 @@
         @click.away="isOpen = false"
         x-show.transition="true"
       >
-        <ul
-          class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center"
-        >
-          <li class="mr-3">
-            <a
-              class="inline-block py-2 px-4 text-white no-underline"
-              href="#"
-              @click="isOpen = false"
-              >Active
-            </a>
-          </li>
-          <li class="mr-3">
-            <a
-              class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-              href="#"
-              @click="isOpen = false"
-              >link
-            </a>
-          </li>
-          <li class="mr-3">
-            <a
-              class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-              href="#"
-              @click="isOpen = false"
-              >link
-            </a>
-          </li>
-          <li class="mr-3">
-            <a
-              class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-              href="#"
-              @click="isOpen = false"
-              >link
-            </a>
-          </li>
-        </ul>
+      
+        {% if navigation.items %}
+
+            <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+                {% for item in navigation.items %}
+                    <li class="mr-3">
+                        <a @click="isOpen = false" class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="{{ item.url }}">{{ item.text }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+        
       </div>
     </nav>
+</div>

@@ -1,12 +1,12 @@
 <nav
     id="header" 
-    class="flex items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0"
+    class="flex flex-col sm:flex-row items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0 px-4 sm:px-6 py-1"
     x-data="{ isOpen: false }"
     @keydown.escape="isOpen = false"
     :class="{ 'shadow-lg bg-indigo-900' : isOpen , 'bg-gray-800' : !isOpen}"
     >
     <div id="progress" class="h-1 z-20 top-0" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
-    <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+    <div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
         <!--Logo etc-->
         <div class="flex items-center flex-shrink-0 text-white mr-6">
             <a
